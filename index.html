@@ -7,6 +7,44 @@
 
 <body>
   <script type="text/javascript">
+  // Prompt to choose rock, paper or scissors, add it to variable playerChoice
+  let playerChoice = prompt("Rock, paper or scissors?");
+  // Give the computer a random choice, each has 1/3 chance
+  let computerChoice = Math.floor(Math.random() * 3) + 1;
+  if (computerChoice === 1) {
+    computerChoice = "rock";
+  } else if (computerChoice === 2) {
+    computerChoice = "paper";
+  } else {
+    computerChoice = "scissors";
+  }
+  // Figure out the winner
+  let result;
+  let playerWin = "You win!";
+  let playerLose = "You lose!";
+  if (playerChoice === computerChoice) {
+    result = "It is a tie!";
+  } else if (playerChoice === "rock") {
+    if (computerChoice === "paper") {
+      result = playerLose;
+    } else {
+      result = playerWin;
+    }
+  } else if (playerChoice === "paper") {
+    if (computerChoice === "scissors") {
+      result = playerLose;
+    } else {
+      result = playerWin;
+    }
+  } else if (playerChoice === "scissors") {
+    if (computerChoice === "rock") {
+      result = playerLose;
+    } else {
+      result = playerWin;
+    }
+  }
+  // Display the choices and who wins.
+  window.alert(result + " \nYour choice: " + playerChoice + "\nComputer: " + computerChoice);
   </script>
 </body>
 
